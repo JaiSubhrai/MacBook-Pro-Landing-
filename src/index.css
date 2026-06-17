@@ -181,25 +181,29 @@ body {
     }
 
     #showcase {
-        @apply relative;
+        @apply relative w-full;
 
         .media {
-            @apply relative lg:overflow-hidden;
+            /* Ensures the canvas takes up exactly one full window viewport height */
+            @apply relative lg:w-full lg:h-screen lg:overflow-hidden;
 
             video {
-                @apply w-full object-cover object-center;
+                @apply w-full h-full object-cover object-center;
             }
 
             .mask {
-                @apply absolute h-full top-0 lg:-top-20 xl:top-0;
+                @apply absolute inset-0 w-full h-full flex items-center justify-center;
 
                 img {
-                    @apply h-full scale-150 lg:scale-100;
+                    @apply w-full h-full object-cover;
                     transform: matrix(80, 0, 0, 80, 0, 0);
                 }
 
                 @media (max-width: 1024px) {
+                    @apply top-0 lg:-top-20 xl:top-0;
+
                     img {
+                        @apply h-full scale-150 lg:scale-100;
                         transform: matrix(1, 0, 0, 1, 0, 0);
                     }
                 }
@@ -222,6 +226,9 @@ body {
             }
         }
     }
+
+
+
 
     #performance {
         @apply w-dvw h-full overflow-hidden pt-20 lg:pt-20 flex flex-col items-center relative;
@@ -339,6 +346,7 @@ body {
                 p {
                     @apply font-semibold text-4xl max-w-2xs;
                 }
+
                 .apple-gradient {
                     @apply p-10 rounded-3xl flex items-center gap-7 relative;
 

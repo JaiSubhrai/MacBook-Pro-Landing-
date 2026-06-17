@@ -11,7 +11,7 @@ const Showcase = () => {
                 scrollTrigger: {
                     trigger: '#showcase',
                     start: 'top top',
-                    end: 'bottom top',
+                    end: 'bottom center',
                     scrub: true,
                     pin: true,
                 }
@@ -19,8 +19,8 @@ const Showcase = () => {
 
             timeline
                 .to('.mask img', {
-                    transform: 'scale(1.2)'
-                }).to('.content', { opacity: 10, y: 0, ease: 'power1.in' });
+                    transform: 'scale(1.1)'
+                }).to('.content', { opacity: 1, y: 0, ease: 'power1.in' });
         }
     }, [isTablet])
 
@@ -29,7 +29,7 @@ const Showcase = () => {
             <div className="media">
                 <video src="/videos/game.mp4" loop muted autoPlay playsInline />
                 <div className="mask">
-                    <img src="/mask-logo.svg" alt={"M4 logo"} />
+                    <img src="/mask-logo.svg" alt={"Apple M4 Mask logo"} />
                 </div>
             </div>
 
@@ -74,3 +74,6 @@ const Showcase = () => {
     )
 }
 export default Showcase
+
+
+
