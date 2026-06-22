@@ -10,7 +10,7 @@ const Highlights = () => {
             scrollTrigger: {
                 trigger: '#highlights',
                 start: isMobile ? 'top top' : 'top top',
-                toggleActions: 'play none reset none'
+                toggleActions: 'play none none reset'
             },
             y: 0,
             opacity: 1,
