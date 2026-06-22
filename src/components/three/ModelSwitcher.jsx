@@ -55,23 +55,21 @@ const ModelSwitcher = ({ scale, isMobile }) => {
         speed: 1,
         zoom: 1,
         azimuth: [-Infinity, Infinity],
-        config: {mass:1, tension: 0, friction: 26}
+        config: {mass:1, tension: 170, friction: 26}
     }
 
     return (
-        <>
-            <PresentationControls {...controlsConfig}>
-                <group ref={largeMacbookRef}>
-                    <MacbookModel16 scale={isMobile ? 0.04 : 0.06} />
-                </group>
-            </PresentationControls>
+        <PresentationControls {...controlsConfig}>
+            {/* Both groups share a single canvas gesture controller */}
+            <group ref={largeMacbookRef}>
+                <MacbookModel16 scale={isMobile ? 0.04 : 0.06} />
+            </group>
 
-            <PresentationControls {...controlsConfig}>
-                <group ref={smallMacbookRef}>
-                    <MacbookModel14 scale={isMobile ? 0.03 : 0.05} />
-                </group>
-            </PresentationControls>
-        </>
+            <group ref={smallMacbookRef}>
+                <MacbookModel14 scale={isMobile ? 0.03 : 0.05} />
+            </group>
+        </PresentationControls>
     )
 }
+
 export default ModelSwitcher
