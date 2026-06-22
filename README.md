@@ -1,6 +1,8 @@
 <div align="center">
   <br />
+<a href="https://jaimacbookpro.netlify.app">
       <img src="public/readme_banner.png" alt="Project Banner">
+</a>
   <br />
 <br />
 
